@@ -8,7 +8,7 @@
 import SwiftUI
 import UIKit
 
-/// ImagePickerControllerは使わないでください(UIHostingControllerと合わせて使うことで動作がカクついてスクロールが使い物にならなくなります)
+/// - Note: ImagePickerControllerは使わないでください(UIHostingControllerと合わせて使うことで動作がカクついてスクロールが使い物にならなくなります)
 public struct SheetPresentationController<SheetView: View>: UIViewControllerRepresentable {
     public typealias UIViewControllerType = UIViewController
 

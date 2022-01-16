@@ -9,8 +9,7 @@ import PhotosUI
 import SwiftUI
 import UIKit
 
-/// SheetをMediumからLargeへスクロールすると、PHPickerViewControllerの問題で途中でPHPickerViewControllerがクラッシュします
-/// (Try Againボタンを押すことで元に戻ります)
+/// - Note: SheetをMediumからLargeへスクロールすると、PHPickerViewControllerの問題で途中でPHPickerViewControllerがクラッシュします(Try Againボタンを押すことで元に戻ります)
 public struct SheetImagePickerController: UIViewControllerRepresentable {
     public typealias UIViewControllerType = UIViewController
 
