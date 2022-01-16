@@ -11,6 +11,8 @@
 		4A1CB8872793B81D00753588 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A1CB8862793B81D00753588 /* ContentView.swift */; };
 		4A1CB8892793B81F00753588 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1CB8882793B81F00753588 /* Assets.xcassets */; };
 		4A1CB88C2793B81F00753588 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4A1CB88B2793B81F00753588 /* Preview Assets.xcassets */; };
+		4A67294A2793BFB50049106B /* SheetPresentationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A6729492793BFB50049106B /* SheetPresentationController.swift */; };
+		4A67294C2793C0AA0049106B /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4A67294B2793C0AA0049106B /* ImagePickerController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +21,8 @@
 		4A1CB8862793B81D00753588 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4A1CB8882793B81F00753588 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4A1CB88B2793B81F00753588 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		4A6729492793BFB50049106B /* SheetPresentationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetPresentationController.swift; sourceTree = "<group>"; };
+		4A67294B2793C0AA0049106B /* ImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +57,10 @@
 			children = (
 				4A1CB8842793B81D00753588 /* SheetSampleApp.swift */,
 				4A1CB8862793B81D00753588 /* ContentView.swift */,
+				4A6729492793BFB50049106B /* SheetPresentationController.swift */,
 				4A1CB8882793B81F00753588 /* Assets.xcassets */,
 				4A1CB88A2793B81F00753588 /* Preview Content */,
+				4A67294B2793C0AA0049106B /* ImagePickerController.swift */,
 			);
 			path = SheetSample;
 			sourceTree = "<group>";
@@ -109,6 +115,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ja,
 			);
 			mainGroup = 4A1CB8782793B81D00753588;
 			productRefGroup = 4A1CB8822793B81D00753588 /* Products */;
@@ -138,7 +145,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4A1CB8872793B81D00753588 /* ContentView.swift in Sources */,
+				4A67294A2793BFB50049106B /* SheetPresentationController.swift in Sources */,
 				4A1CB8852793B81D00753588 /* SheetSampleApp.swift in Sources */,
+				4A67294C2793C0AA0049106B /* ImagePickerController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
