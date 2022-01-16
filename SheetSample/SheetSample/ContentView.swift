@@ -19,6 +19,7 @@ struct ContentView: View {
                     Image(uiImage: uiImage)
                         .resizable()
                         .scaledToFill()
+                        .aspectRatio(contentMode: .fit)
                         .padding()
                 } else {
                     Text(dateTimeText)
@@ -30,19 +31,22 @@ struct ContentView: View {
                     Text("Show a half sheet.")
                 }
                 .buttonStyle(.borderedProminent)
+#if true
                 .sheetPresentation(isPresented: $showSheet, sheetView: {
-//                    ImagePickerController { uiImage in
-//                        self.uiImage = uiImage
-//                    }
-//                    .edgesIgnoringSafeArea(.bottom)
                     DatePicker("Select date and time.", selection: $date)
                         .datePickerStyle(.graphical)
                         .environment(\.locale, Locale(identifier: Locale.preferredLanguages.first!))
-                }, onDismiss: nil)
+                })
+#else
+                .sheetPresentationWithImagePicker(isPresented: $showSheet) { uiImage in
+                    self.uiImage = uiImage
+                }
+#endif
                 .padding()
             }
             .navigationTitle("Half Sheet Sample")
         }
+
     }
 
     private var dateTimeText: String {

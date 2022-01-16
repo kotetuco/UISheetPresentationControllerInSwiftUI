@@ -5,19 +5,8 @@
 //  Created by kotetuco on 2022/01/16.
 //
 
-import PhotosUI
 import SwiftUI
 import UIKit
-
-public extension View {
-    func sheetPresentation<SheetView: View>(isPresented: Binding<Bool>,
-                                            @ViewBuilder sheetView: @escaping () -> SheetView,
-                                            onDismiss: (() -> ())? = nil) -> some View {
-        background {
-            SheetPresentationController(isPresented: isPresented, sheetView: sheetView(), onDismiss: onDismiss)
-        }
-    }
-}
 
 /// ImagePickerControllerは使わないでください(UIHostingControllerと合わせて使うことで動作がカクついてスクロールが使い物にならなくなります)
 public struct SheetPresentationController<SheetView: View>: UIViewControllerRepresentable {
@@ -25,9 +14,9 @@ public struct SheetPresentationController<SheetView: View>: UIViewControllerRepr
 
     @Binding private var isPresented: Bool
     private var sheetView: SheetView
-    private var onDismiss: (() -> ())?
+    private var onDismiss: (() -> Void)?
 
-    init(isPresented: Binding<Bool>, sheetView: SheetView, onDismiss: (() -> ())?) {
+    init(isPresented: Binding<Bool>, sheetView: SheetView, onDismiss: (() -> ())? = nil) {
         self._isPresented = isPresented
         self.sheetView = sheetView
         self.onDismiss = onDismiss
