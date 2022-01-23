@@ -32,11 +32,11 @@ struct ContentView: View {
                 }
                 .buttonStyle(.borderedProminent)
 #if true
-                .sheetPresentation(isPresented: $showSheet, sheetView: {
+                .sheetPresentation(isPresented: $showSheet) {
                     DatePicker("Select date and time.", selection: $date)
                         .datePickerStyle(.graphical)
                         .environment(\.locale, Locale(identifier: Locale.preferredLanguages.first!))
-                })
+                }
 #else
                 .sheetPresentationWithImagePicker(isPresented: $showSheet) { uiImage in
                     self.uiImage = uiImage

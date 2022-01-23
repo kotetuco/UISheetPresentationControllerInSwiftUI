@@ -9,17 +9,17 @@ import SwiftUI
 import UIKit
 
 /// - Note: ImagePickerControllerは使わないでください(UIHostingControllerと合わせて使うことで動作がカクついてスクロールが使い物にならなくなります)
-public struct SheetPresentationController<SheetView: View>: UIViewControllerRepresentable {
+public struct SheetPresentationController<Content: View>: UIViewControllerRepresentable {
     public typealias UIViewControllerType = UIViewController
 
     @Binding private var isPresented: Bool
-    private var sheetView: SheetView
     private var onDismiss: (() -> Void)?
+    private var content: Content
 
-    init(isPresented: Binding<Bool>, sheetView: SheetView, onDismiss: (() -> ())? = nil) {
+    init(isPresented: Binding<Bool>, onDismiss: (() -> ())? = nil, content: Content) {
         self._isPresented = isPresented
-        self.sheetView = sheetView
         self.onDismiss = onDismiss
+        self.content = content
     }
 
     public func makeCoordinator() -> Coordinator {
@@ -35,7 +35,7 @@ public struct SheetPresentationController<SheetView: View>: UIViewControllerRepr
     public func updateUIViewController(_ uiViewController: UIViewController, context: Context) {
         if isPresented {
             if uiViewController.presentedViewController == nil {
-                let sheetViewController = SheetHostingViewController(rootView: sheetView)
+                let sheetViewController = SheetHostingViewController(rootView: content)
                 sheetViewController.sheetPresentationController?.delegate = context.coordinator
                 sheetViewController.delegate = context.coordinator
                 if let sheetPresentationController = sheetViewController.sheetPresentationController {

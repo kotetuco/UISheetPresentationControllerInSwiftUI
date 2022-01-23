@@ -9,11 +9,11 @@ import SwiftUI
 import UIKit
 
 public extension View {
-    func sheetPresentation<SheetView: View>(isPresented: Binding<Bool>,
-                                            @ViewBuilder sheetView: @escaping () -> SheetView,
-                                            onDismiss: (() -> Void)? = nil) -> some View {
+    func sheetPresentation<Content>(isPresented: Binding<Bool>,
+                                    onDismiss: (() -> Void)? = nil,
+                                    @ViewBuilder content: @escaping () -> Content) -> some View where Content: View {
         background {
-            SheetPresentationController(isPresented: isPresented, sheetView: sheetView(), onDismiss: onDismiss)
+            SheetPresentationController(isPresented: isPresented, onDismiss: onDismiss, content: content())
         }
     }
 
